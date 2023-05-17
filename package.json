@@ -1,0 +1,8 @@
+{
+  "name": "customer-cli",
+  "version": "1.0.0",
+  "description": "Customer management cli",
+  "main": "index.js",
+  "author": "Alexander Kunyelewosi ",
+  "license": "MIT"
+}
