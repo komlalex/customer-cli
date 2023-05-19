@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
+require("colors");
 const connectDB = require("./config/db");
 
 const app = express();

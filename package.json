@@ -5,10 +5,11 @@
   "main": "index.js",
   "author": "Alexander Kunyelewosi ",
   "license": "MIT",
-  "scripts" : {
+  "scripts": {
     "devStart": "nodemon index"
   },
   "dependencies": {
+    "colors": "^1.4.0",
     "commander": "^10.0.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
