@@ -1,14 +1,15 @@
-const mongoose = require("mongoose");
-require("dotenv").config();
-require("colors");
-const connectDB = require("./config/db");
+
+import dotenv from "dotenv";
+dotenv.config()
+import "colors";
+import connectDB from "./config/db.js";
 
 const port = process.env.PORT || 1998
 //Connect DB
 connectDB();
 
 // Import model
-const Customer = require("./model/customer");
+import Customer from "./model/customer.js";
 
 //Add Customer
 const addCustomer = async (customer) => {
@@ -42,7 +43,7 @@ const findCustomer = async (name) => {
   
 // Exports All Methods
 
-module.exports = {
+export {
     addCustomer,
     findCustomer
 }
