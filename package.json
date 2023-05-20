@@ -9,6 +9,8 @@
   },
   "author": "Alexander Kunyelewosi ",
   "license": "MIT",
+  "preferGlobal": true,
+  "bin": "./commands.js",
   "scripts": {
     "devStart": "nodemon index"
   },

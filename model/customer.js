@@ -4,20 +4,22 @@ const Schema = mongoose.Schema;
 const customerSchema = new Schema({
     firstname: {
         type: String,
-        require: true
+        require: [true, "First name is required"]
     },
     lastname: {
         type: String,
-        require: true
+        require: [true, "Last name is required"]
     },
     phone: {
         type: String,
-        require: true
+        require: [true, "Phone is required"]
     },
     email: {
         type: String,
-        require: true
+        require: [true, "Email is required"]
     }
+}, {
+    timestamps: true
 });
 
 

@@ -4,7 +4,6 @@ dotenv.config()
 import "colors";
 import connectDB from "./config/db.js";
 
-const port = process.env.PORT || 1998
 //Connect DB
 connectDB();
 
@@ -21,7 +20,7 @@ const addCustomer = async (customer) => {
         process.exit(0);
     } catch (error) {
         console.error(error.message);
-        process.exit(0);
+        process.exit(1);
     }
 }
         
@@ -37,13 +36,52 @@ const findCustomer = async (name) => {
         process.exit(0);
     } catch (error) {
         console.error(error.message);
-        process.exit(0);
+        process.exit(1);
     }
 }
   
+// Update Customer 
+const updateCustomer =  async (_id, customer) => {
+    try {
+        await Customer.findByIdAndUpdate(_id, customer);
+        console.info(`Customer Update Successfull!!!`.green);
+        process.exit(0);
+    } catch (error) {
+        console.error(error.message);
+        process.exit(1);
+    }
+  }
+
+  // Remove Customer
+  const removeCustomer = async (_id) => {
+    try {
+        await Customer.findByIdAndDelete(_id);
+        console.info(`Customer Successfully Removed`.green);
+        process.exit(0);
+    } catch (error) {
+        console.error(error.message);
+        process.exit(1);
+    }
+  }
+
+  // List all Customers
+  const listCustomers = async() => {
+    try {
+        const customers = await Customer.find();
+        console.info(customers);
+        console.info(`Total Number of Customers: ${customers.length}`)
+        process.exit(0)
+    } catch (error) {
+        console.error(error.message);
+        process.exit(1)
+    }
+  }
 // Exports All Methods
 
 export {
     addCustomer,
-    findCustomer
+    findCustomer,
+    updateCustomer,
+    removeCustomer,
+    listCustomers
 }
